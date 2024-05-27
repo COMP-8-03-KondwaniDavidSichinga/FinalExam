@@ -3,7 +3,6 @@
 // Manipulate a matrix of doubles, with dimensions 4 x £, which is declared in the main(i.e. double matrix[4][3])
 // 
 //Kondwani David Sichinga
-//
 
 #include <iostream>
 #include "FinalExam.cpp"
@@ -13,22 +12,33 @@ using namespace std;
 //the data is validated using a while loop to ensure the data entred is between -2.5 and 2.5
 void EnterMatrixData(double matrix[][3], const int SIZE1)
 {
-		double num1 = 3;
-		cout << "Enter a number between -2.5 and 2.5 :" << endl;
+	double num1 = 3;
+	cout << "Enter a number between -2.5 and 2.5 :" << endl;
 
-		for (int i = 0; i < SIZE1; ++i) 
+	for (int i = 0; i < SIZE1; ++i)
+	{
+		cout << "Row " << (i + 1) << " :";
+		for (int j = 0; j < 3; ++j)
 		{
-			cout << "Row " << (i + 1) << " :";
-			for (int j = 0; j < 3; ++j)
+			
+			while ((num1 < -2.5) || (num1 > 2.5))
 			{
-				cin >> matrix[i][j];
-				cout << " ";
-
+				cin >> num1;
 			}
-			cout << endl;
-		}
 
+			if ((num1 > -2.5) && (num1 < 2.5))
+			{
+				matrix[i][j] = num1;
+				cout << " ";
+			}
+			else
+				cout << "Make sure the number is betweeen -2.5 and 2.5 :" << endl;
+
+		}
 		cout << endl;
+	}
+
+	cout << endl;
 	;
 }
 
@@ -39,10 +49,10 @@ double SumMatrixData(double matrix[][3], const int SIZE1)
 	double sum = 0;
 
 	for (int i = 0; i < SIZE1; i++)
-		{
+	{
 		for (int j = 0; j < 3; j++)
 			sum += matrix[i][j];
-		}
+	}
 
 	return sum;
 
