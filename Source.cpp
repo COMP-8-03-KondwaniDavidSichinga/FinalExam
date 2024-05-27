@@ -6,12 +6,15 @@
 //
 
 #include <iostream>
+#include "FinalExam.cpp"
 using namespace std;
+
 
 int main()
 {
 	//the double matrix is initalized with the values of 4 and 3 in the arrays
-	double matrix[4][3];
+	const int SIZE1 = 4, SIZE2 = 3;
+	double matrix[SIZE1][SIZE2] = { 1,1,1,1 };
 	int choice = 0;
 
 
@@ -27,8 +30,6 @@ int main()
 		cout << "4) Exit" << endl;
 		cout << "Please enter choice: " ;
 		cin >> choice;
-
-
 
 			switch (choice)
 			{
@@ -52,7 +53,7 @@ int main()
 
 				case 4:
 				{
-
+					cout << "Goodbye " << endl;
 					break;
 				}
 
