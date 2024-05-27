@@ -26,7 +26,7 @@ void EnterMatrixData(double matrix[][3], const int SIZE1)
 				cin >> num1;
 			}
 
-			if ((num1 > -2.5) && (num1 < 2.5))
+			if ((num1 < -2.5) && (num1 > 2.5))
 			{
 				matrix[i][j] = num1;
 				cout << " ";
